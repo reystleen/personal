@@ -1,2 +1,3 @@
-# personal
-My realm
+# Personal site
+## My realm
+First step in world domination.
