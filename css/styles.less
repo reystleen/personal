@@ -10,13 +10,14 @@ body {
 
 * {
     font-family: @secondary-font;
+    box-sizing: border-box;
 }
 
 h1 {
     font-family: @primary-font;
     color: @secondary-color;
     font-weight: 800;
-    font-size: 4vw;
+    font-size: 80px;
 
     span {
         font-weight: 300;
@@ -29,12 +30,62 @@ h2 {
     font-family: @primary-font;
     color: @secondary-color;
     font-weight: 800;
-    font-size: 1.4vw;
+    font-size: 24px;
+    line-height: 1;
+    text-transform: uppercase;
+
+    &.section-title {
+        border-left: 8px solid @primary-color;
+        padding-left: 13px;
+    }
 }
 
-p {
-    color: @secondary-color;
-    font: @secondary-font;
+.logo {
+    width: 100px;
+    a {
+        display: block;
+        svg {
+            margin: 0 auto;
+            display: block;
+            width: 3vw;
+            height: auto;
+            path {
+                fill: #fff;
+            }    
+        }    
+    }    
+}
+
+.fold {
+    background-color: @main-bg;
+    margin-top: -1px;
+    
+    .fold-item {
+        svg {
+            width: 100%;
+            height: auto;
+
+            polygon {
+                fill: @primary-color;
+            }
+        }
+    }
+}
+
+.grid-item {
+    p {
+        span {
+            color: #000;
+            font: @secondary-font;
+            font-weight: 500;
+            background-color: #fff;
+            padding: 6px 0;
+            font-size: 20px;
+            line-height: 34px;
+            box-shadow: 7px 0 0 0 #fff, -7px 0 0 0 #fff;
+            box-decoration-break: clone;
+        }
+    }    
 }
 
 footer {
