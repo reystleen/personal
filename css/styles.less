@@ -15,12 +15,22 @@ body {
 
 h1 {
     font-family: @primary-font;
-    color: @secondary-color;
+    color: @primary-color;
     font-weight: 800;
     font-size: 80px;
+    background-color: @primary-color;
+    background-image: linear-gradient(45deg, @secondary-color, @primary-color);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
     position: relative;
 
     span {
+        color: @secondary-color;
+        -webkit-background-clip: initial;
+        -moz-background-clip: initial;
+        -webkit-text-fill-color: initial;
         font-weight: 300;
         font-size: 20px;
         font-style: italic;
@@ -58,6 +68,81 @@ h2 {
             }    
         }    
     }    
+}
+
+.switch-container {
+    .switch {
+        cursor: pointer;
+
+        input {
+            display: none;
+
+            + div {
+                position: relative;
+
+                &:before, 
+                &:after {
+                    content: '';
+                    position: absolute;
+                    height: 4px;
+                    top: 10px;
+                    width: 24px;
+                    background: @-line;
+                    transform: scaleX(1);
+                    transition: transform @-duration ease;
+                }
+
+                &:before {
+                    left: 0;
+                    transform: scaleX(0);
+                    transform-origin: 0 50%;
+                }
+                &:after {
+                    left: 28px;
+                    transform-origin: 100% 50%;
+                }
+
+                span {
+                    padding-left: 56px;
+                    line-height: 24px;
+
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 24px;
+                        height: 24px;
+                        border-radius: 50%;
+                        box-shadow: inset 0 0 0 4px @-ring;
+                        transform: translateX(0);
+                        transition: box-shadow @-duration ease, transform @-duration ease;
+                    }
+
+                    &:not(:empty) {
+                        padding-left: 64px;
+                    }
+                }
+            }
+            &:checked {
+                + div {
+                    &:before {
+                        transform: scaleX(1);
+                    }    
+                    &:after {
+                        transform: scaleX(0);
+                    }    
+                    span {
+                        &:before {
+                            transform: translateX(28px);
+                            box-shadow: inset 0 0 0 12px @-ring;
+                            @-ring: @-circle;
+                        }    
+                    }
+                }    
+            }
+        }
+    }
 }
 
 .fold {
@@ -132,9 +217,7 @@ h2 {
         .img-delft {
             margin-right: 40px;
         }
-        .img-path {
 
-        }
         .img-cthulhu {
             position: absolute;
             right: 0;

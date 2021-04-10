@@ -8,7 +8,8 @@
     z-index: 1;
         
     display: grid;
-    grid-template-columns:1fr repeat(12, ~"min(1600px/14,100%/12)") 1fr;
+    //grid-template-columns:1fr repeat(12, ~"min(1600px/14,100%/12)") 1fr;
+    grid-template-columns: repeat(14, 1fr);
     
     width: 100%;
     max-width: 1600px;
@@ -37,7 +38,8 @@
     z-index: 2;
 
     display: grid;
-    grid-template-columns:1fr repeat(12, ~"min(1600px/14,100%/12)") 1fr;
+    //grid-template-columns:1fr repeat(12, ~"min(1600px/14,100%/12)") 1fr;
+    grid-template-columns: repeat(14, 1fr);
 
     width: 100%;
     max-width: 1600px;
@@ -68,7 +70,8 @@
     max-width: 1600px;
 
     display: grid;
-    grid-template-columns:1fr repeat(12, ~"min(1600px/14,100%/12)") 1fr;
+    //grid-template-columns:1fr repeat(12, ~"min(1600px/14,100%/12)") 1fr;
+    grid-template-columns: repeat(14, 1fr);
     grid-template-rows: repeat(6, auto);
 
     header {
@@ -76,14 +79,22 @@
         grid-column-end: 14;
         grid-row: 1;
         background: @main-bg;
+        padding: 1.5em 0;
         border-bottom: 1px solid;
         border-image-slice: 1;
         border-width: 1px;
         border-image-source: linear-gradient(to right, @secondary-color, @primary-color);
-        padding: 30px 0;
 
-        .switch {
-            float: right;
+        // Postion Logo and Switch left | right
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+
+        .switch-container {
+            display: flex;
+            justify-content: center;
+            align-items: center; 
         }
     }
 
