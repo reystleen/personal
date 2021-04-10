@@ -4,6 +4,8 @@ function colSize() {
 	// var realWidth = Math.min(1600 / 14, docWidth / 12);
 	var realWidth = docWidth / 14;
 	// console.log(realWidth);
+	$(".logo").css("width", realWidth);
+	$(".switch-container").css("width", realWidth);
 	$(".fold").css("height", realWidth);
 	$(".img-path").css("width", realWidth * 6.45);
 }
