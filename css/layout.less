@@ -12,7 +12,7 @@
     grid-template-columns: repeat(14, 1fr);
     
     width: 100%;
-    max-width: 1600px;
+    max-width: @mw;
     height: 100vh;
 
     border-left: 1px solid #000;    
@@ -42,7 +42,7 @@
     grid-template-columns: repeat(14, 1fr);
 
     width: 100%;
-    max-width: 1600px;
+    max-width: @mw;
 
     //padding-top: 98px;    
     
@@ -67,7 +67,7 @@
     z-index: 3;
 
     width: 100%;
-    max-width: 1600px;
+    max-width: @mw;
 
     display: grid;
     //grid-template-columns:1fr repeat(12, ~"min(1600px/14,100%/12)") 1fr;
@@ -105,12 +105,12 @@
         //background-color: rgba(255, 255, 0, 0.3);
 
         h1 {
-            .fluid-type (font-size, 600px, 1600px, 24px, 80px);
+            .fluid-type (font-size, 600px, @mw, 24px, 80px);
             position: relative;
             white-space: nowrap;
 
             span {
-                .fluid-type (font-size, 600px, 1600px, 10px, 20px);
+                .fluid-type (font-size, 600px, @mw, 10px, 20px);
                 position: absolute;
                 bottom: -15px;
                 right: 0;

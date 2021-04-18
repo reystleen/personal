@@ -41,6 +41,7 @@ h2 {
     font-size: 24px;
     line-height: 1;
     text-transform: uppercase;
+    margin: 2vw 0;
 
     &.section-title {
         border-left: 8px solid @primary-color;
@@ -160,8 +161,10 @@ h2 {
         flex-wrap: wrap;
         list-style: none;
         padding-left: 0;
+        margin: 0;
+
         li {
-            margin-right: 2em;
+            margin: 2vw 2vw 0 0;
             a {
                 display: flex;
                 justify-content: center;
@@ -178,6 +181,9 @@ h2 {
                     height: auto;
                     fill: @secondary-color;
                 }
+            }
+            &:last-child {
+                margin-right: 0;
             }    
             &.ico-facebook {
                 svg {
