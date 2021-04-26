@@ -7,7 +7,9 @@ function colSize() {
 	$(".logo").css("width", realWidth);
 	$(".switch-container").css("width", realWidth);
 	$(".fold").css("height", realWidth);
-	$(".img-path").css("width", realWidth * 6.45);
+	$(".img-path").css("width", realWidth * 6.4);
+	$(".img-cthulhu").css("width", realWidth);
+	$(".logo a svg").css("width", realWidth / 2);
 }
 
 
