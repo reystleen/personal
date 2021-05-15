@@ -1,6 +1,7 @@
 // Colors
 @primary-color: #00b5f0;
 @secondary-color: #ffffff;
+@emphasis-color: #FF7E00;
 @main-bg: #001822;
 @dark-blue: #223740;
 
@@ -37,4 +38,23 @@
         @{property}: @max-size;
     }
 
+}
+
+// https://stackoverflow.com/questions/13367868/modify-svg-fill-color-when-being-served-as-background-image
+//.icon-bg(@bg-color) {
+    //background-image: url('data:image/svg+xml;utf8,<svg ...><g stroke="@{color}" ... /></g></svg>');
+//    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 144 144'%3E%3Ctitle%3Eicon-squircle%3C/title%3E%3Cpath d='M72,144c-29.27,0-47.27-2.14-58.56-13.44S0,101.27,0,72,2.14,24.73,13.44,13.44,42.73,0,72,0s47.27,2.14,58.56,13.44S144,42.73,144,72s-2.14,47.27-13.44,58.56S101.27,144,72,144Z' fill='@bg-color'/%3E%3C/svg%3E'");
+//}
+
+.social (@social-color) {
+    .c-tooltip {
+        &:hover{
+            &::after { 
+                background: @social-color;
+            }
+        }
+        &::before {
+            border-top-color: @social-color;
+        }
+    }
 }
