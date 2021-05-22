@@ -46,6 +46,23 @@
 //    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 144 144'%3E%3Ctitle%3Eicon-squircle%3C/title%3E%3Cpath d='M72,144c-29.27,0-47.27-2.14-58.56-13.44S0,101.27,0,72,2.14,24.73,13.44,13.44,42.73,0,72,0s47.27,2.14,58.56,13.44S144,42.73,144,72s-2.14,47.27-13.44,58.56S101.27,144,72,144Z' fill='@bg-color'/%3E%3C/svg%3E'");
 //}
 
+@screen-xs-min:     480px;
+@screen-sm-min:     768px;
+@screen-md-min:     992px;
+@screen-lg-min:     1200px;
+
+@screen-xs-max:     (@screen-sm-min - 1);
+@screen-sm-max:     (@screen-md-min - 1);
+@screen-md-max:     (@screen-lg-min - 1);
+
+@phone:             ~"only screen and (max-width: @{screen-xs-min})";
+@phone-strict:      ~"only screen and (min-width: @{screen-xs-min}) and (max-width: @{screen-xs-max})";
+@tablet:            ~"only screen and (min-width: @{screen-sm-min})";
+@tablet-strict:     ~"only screen and (min-width: @{screen-sm-min}) and (max-width: @{screen-sm-max})";
+@desktop:           ~"only screen and (min-width: @{screen-md-min})";
+@desktop-strict:    ~"only screen and (min-width: @{screen-md-min}) and (max-width: @{screen-md-max})";
+@large:             ~"only screen and (min-width: @{screen-lg-min})";
+
 .social (@social-color) {
     .c-tooltip {
         &:hover{
