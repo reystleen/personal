@@ -103,6 +103,10 @@
         grid-column-end: 8;
         grid-row: 2;
         //background-color: rgba(255, 255, 0, 0.3);
+        @media @phone {
+            grid-column-start: 3;
+            grid-column-end: 13;
+        }
 
         h1 {
             .fluid-type (font-size, 600px, @mw, 24px, 80px);
@@ -114,6 +118,11 @@
                 position: absolute;
                 bottom: -15px;
                 right: 0;
+                
+                @media @phone {
+                    right: auto;
+                    left: 0;
+                }      
             }
         }
     }
